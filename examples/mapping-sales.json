@@ -1,0 +1,29 @@
+{
+  "date": {
+    "column": "day"
+  },
+  "marketplace": {
+    "constant": "ozon"
+  },
+  "account": {
+    "constant": "demo"
+  },
+  "currency": {
+    "constant": "RUB"
+  },
+  "sku": {
+    "column": "product"
+  },
+  "orders": {
+    "column": "ordered"
+  },
+  "cancelled_orders": {
+    "column": "cancelled"
+  },
+  "ordered_amount": {
+    "column": "gross_amount"
+  },
+  "cancelled_amount": {
+    "column": "cancelled_amount"
+  }
+}

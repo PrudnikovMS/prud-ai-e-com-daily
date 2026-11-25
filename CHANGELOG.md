@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.2.0 — development milestone (2026-11-25)
+
+- Added experimental read-only collection commands for Wildberries, Ozon and Yandex Market.
+- Kept actual advertising expenses distinct from statistical spend; missing cancellation amounts are not inferred.
+- Added local-only private output, explicit CSV mapping, mock API tests and bilingual setup guides.
+- Native JSON-to-report normalization and live account validation are still pending.
+
 ## 0.1.0 — initial public core
 
 - Added normalized sales/advertising CSV reconciliation and aggregation.

@@ -13,7 +13,7 @@ Marketplace sellers spend valuable time reconciling orders, cancellations and ad
 
 The project is developed by a marketplace practitioner. This repository contains an independent public reporting core, not a production deployment or customer database. All example accounts, SKU identifiers, campaigns and transaction values are fictional.
 
-## What works in v0.1.0
+## What works in v0.2.0 (development)
 
 - Import two normalized CSV files: daily SKU-level orders and campaign-level advertising expenses.
 - Reconcile by date, marketplace, seller account, currency and SKU.
@@ -23,15 +23,15 @@ The project is developed by a marketplace practitioner. This repository contains
 - Export Excel-compatible UTF-8 CSV, without API keys, external services or runtime dependencies.
 - Stop on incomplete joins rather than silently inventing zero values.
 
-**Scope:** normalized CSV input only. Native marketplace exports must be mapped into the documented schema manually or through a future adapter. Live API connections, AI-generated recommendations, Telegram delivery, financial P&L and scheduling are planned, not implemented in this release. This tool reports order metrics, not realized revenue or profit. It cannot independently prove that every expected date/SKU is present in both sources.
+**Scope:** the reporting core still requires normalized CSV. Experimental API collectors for WB, Ozon and Yandex Market now retrieve source data or request reports; they do not yet produce reconciled net-order reports directly. Explicit CSV column mapping is available for already aggregated exports. Live-account validation, native normalization, AI-generated recommendations, Telegram delivery, financial P&L and scheduling remain outstanding. This tool reports order metrics, not realized revenue or profit. It cannot independently prove that every expected date/SKU is present in both sources.
 
 ## Marketplace coverage
 
 | Marketplace | Normalized CSV | Native export / API |
 | --- | --- | --- |
-| Wildberries | Synthetic example | Planned |
-| Ozon | Synthetic example | Planned |
-| Yandex Market | Synthetic example | Planned |
+| Wildberries | Synthetic example | Experimental sales history, actual expenses, ad statistics |
+| Ozon | Synthetic example | Experimental sales analytics and Performance expenses |
+| Yandex Market | Synthetic example | Experimental orders/services report generation and status |
 | Amazon | Synthetic example | Planned |
 | Megamarket, AliExpress, eBay, Etsy and others | Generic schema | Proposed |
 
@@ -57,6 +57,10 @@ Example output (fictional Wildberries account, two days):
 
 These ratios use all orders in the selected group, not ad-attributed orders. Zero denominators produce empty ratio cells; spending is still reported. See [the schema](docs/schema.md) for the cancellation cohort and allocation assumptions.
 
+## Experimental marketplace adapters
+
+Read [the adapter setup guide](docs/adapters.md) or [русскую инструкцию](docs/adapters.ru.md). Use `python -m prud_ecom.adapters --help` for commands. Source collection is explicitly invoked, local credentials only, with raw outputs kept in the ignored `private/` folder. No live seller account has been tested. The original report command remains offline. Never mistake raw campaign data for verified SKU-level spending.
+
 ## Tests
 
 ```bash
@@ -67,7 +71,7 @@ Regression tests cover aggregation, zero-order spending, duplicates, missing dat
 
 ## Privacy and security
 
-The reporting core operates locally, reads files you specify, and does not make network requests. Use synthetic examples in public issues. Never commit seller exports, account identities, credentials or Telegram tokens. See [SECURITY.md](SECURITY.md). CSV input is expected to contain trusted business identifiers; inspect unfamiliar CSV text before opening it in a spreadsheet.
+The reporting core operates locally and makes no network requests. Experimental collectors contact only the selected marketplace API when explicitly invoked. Raw responses remain local. Use synthetic examples in public issues. Never commit seller exports, account identities, credentials or Telegram tokens. See [SECURITY.md](SECURITY.md). CSV input is expected to contain trusted business identifiers; inspect unfamiliar CSV text before opening it in a spreadsheet.
 
 ## Help shape the project
 

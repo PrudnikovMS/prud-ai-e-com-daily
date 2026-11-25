@@ -5,8 +5,8 @@ This is a proposal, not a delivery commitment. New adapters should be accepted o
 | Stage | Status | Deliverables |
 | --- | --- | --- |
 | v0.1 | Implemented | Normalized CSV core, daily/period reports, validation, tests, docs |
-| v0.2 | Proposed | Native Wildberries, Ozon and Yandex Market export adapters; Excel imports; explicit source coverage checks |
-| v0.3 | Proposed | Source-specific read-only API clients, rate limits, safe credential handling, idempotent storage and reconciliation |
+| v0.2 | In development | Experimental WB, Ozon and Yandex Market API collectors and explicit CSV mapping implemented; native normalization, Excel imports, live verification and coverage checks pending |
+| v0.3 | Proposed | Validated pagination, report downloads, source-specific native parsers, rate-limit scheduling, idempotent storage and reconciliation |
 | v0.4 | Proposed | Local dashboard, configurable daily/weekly/monthly reports, Telegram preview and approved delivery |
 | v0.5 | Proposed | Fees, logistics, refunds, cost of goods and tax-aware P&L; versioned accounting definitions |
 | Later | Proposed | Megamarket, AliExpress, Amazon, eBay and Etsy adapters, inventory and stockout analytics, optional MCP interface, AI-assisted anomaly explanations with evidence and human review |

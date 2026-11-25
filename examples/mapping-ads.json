@@ -1,0 +1,23 @@
+{
+  "date": {
+    "column": "day"
+  },
+  "marketplace": {
+    "constant": "ozon"
+  },
+  "account": {
+    "constant": "demo"
+  },
+  "currency": {
+    "constant": "RUB"
+  },
+  "sku": {
+    "column": "product"
+  },
+  "campaign_id": {
+    "column": "campaign"
+  },
+  "ad_spend": {
+    "column": "expense"
+  }
+}

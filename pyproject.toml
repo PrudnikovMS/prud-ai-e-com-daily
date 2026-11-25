@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "prud-ai-e-com-daily"
-version = "0.1.0"
+version = "0.2.0"
 description = "Local-first, cross-marketplace sales and advertising reporting core"
 readme = "README.md"
 requires-python = ">=3.10"
@@ -13,6 +13,7 @@ dependencies = []
 
 [project.scripts]
 prud-ecom = "prud_ecom.__main__:main"
+prud-ecom-adapters = "prud_ecom.adapters:main"
 
 [project.urls]
 Homepage = "https://github.com/PrudnikovMS/prud-ai-e-com-daily"
