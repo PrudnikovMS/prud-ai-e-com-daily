@@ -1,0 +1,16 @@
+name: Bug report
+description: Report a reproducible reporting or validation error
+title: "[Bug]: "
+body:
+  - type: textarea
+    attributes:
+      label: Problem
+      description: What happened and what did you expect?
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Synthetic reproduction
+      description: Provide fictional CSV rows, command, and Python version. Never include private data or tokens.
+    validations:
+      required: true

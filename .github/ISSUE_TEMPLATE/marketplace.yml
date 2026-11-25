@@ -1,0 +1,21 @@
+name: Marketplace adapter proposal
+description: Suggest a marketplace or export-format integration
+title: "[Adapter]: "
+body:
+  - type: input
+    attributes:
+      label: Marketplace and report type
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Format and metric definitions
+      description: Include official docs or a synthetic example, timezone, currency, cancellations and ad spend attribution.
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Use case
+      description: Describe who benefits and which reconciliation checks are needed.
+    validations:
+      required: true

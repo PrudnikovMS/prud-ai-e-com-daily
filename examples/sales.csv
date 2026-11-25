@@ -1,0 +1,7 @@
+date,marketplace,account,currency,sku,orders,cancelled_orders,ordered_amount,cancelled_amount
+2026-11-20,wildberries,demo-a,RUB,SKU-001,12,2,12000,2000
+2026-11-20,wildberries,demo-a,RUB,SKU-002,0,0,0,0
+2026-11-20,ozon,demo-b,RUB,SKU-001,8,1,9600,1200
+2026-11-20,yandex_market,demo-c,RUB,SKU-003,5,0,5000,0
+2026-11-20,amazon,demo-d,USD,SKU-001,3,1,75,25
+2026-11-21,wildberries,demo-a,RUB,SKU-001,6,0,6000,0

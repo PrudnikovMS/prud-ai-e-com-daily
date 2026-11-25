@@ -1,0 +1,8 @@
+date,marketplace,account,currency,sku,campaign_id,ad_spend
+2026-11-20,wildberries,demo-a,RUB,SKU-001,CAM-01,400
+2026-11-20,wildberries,demo-a,RUB,SKU-001,CAM-02,600
+2026-11-20,wildberries,demo-a,RUB,SKU-002,CAM-03,100
+2026-11-20,ozon,demo-b,RUB,SKU-001,CAM-04,840
+2026-11-20,yandex_market,demo-c,RUB,SKU-003,no_ads,0
+2026-11-20,amazon,demo-d,USD,SKU-001,CAM-05,5
+2026-11-21,wildberries,demo-a,RUB,SKU-001,CAM-01,600
