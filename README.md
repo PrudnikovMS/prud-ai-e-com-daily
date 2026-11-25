@@ -1,19 +1,45 @@
 # PRUD AI e-com daily
 
-**Open-source, local-first marketplace reporting for sellers, analysts and developers worldwide.**
+**Open-source, local-first marketplace analytics and financial reconciliation for sellers, analysts and developers.**
+
+> **Early development / prototype (v0.2.0).** This project is incomplete, experimental and not ready for production accounting. The current reporting core calculates operational order metrics from normalized CSV files. It does not yet reconcile official financial reports, calculate actual profit or automatically produce complete reports from marketplace APIs. Please do not rely on it for business-critical financial decisions without independent verification.
 
 [![License: AGPL-3.0](https://img.shields.io/badge/License-AGPL--3.0-blue.svg)](LICENSE)
 [![CI](https://github.com/PrudnikovMS/prud-ai-e-com-daily/actions/workflows/ci.yml/badge.svg)](https://github.com/PrudnikovMS/prud-ai-e-com-daily/actions/workflows/ci.yml)
 
-[Русская документация](docs/README.ru.md) · [Data schema](docs/schema.md) · [Roadmap](ROADMAP.md) · [Contributing](CONTRIBUTING.md)
+[Русская документация](docs/README.ru.md) · [Data schema](docs/schema.md) · [Financial reconciliation design](docs/financial-reconciliation.md) · [Roadmap](ROADMAP.md) · [Contributing](CONTRIBUTING.md) · [Development tasks](https://github.com/PrudnikovMS/prud-ai-e-com-daily/issues)
 
 ## Why this project exists
 
 Marketplace sellers spend valuable time reconciling orders, cancellations and advertising expenses across inconsistent reporting formats. PRUD AI e-com daily aims to make routine analytics accessible, reproducible and trustworthy, without requiring a paid analytics subscription or sending seller data to a third party.
 
-The project is developed by a marketplace practitioner. This repository contains an independent public reporting core, not a production deployment or customer database. All example accounts, SKU identifiers, campaigns and transaction values are fictional.
+The maintainer works in marketplace management and financial analytics. The idea grew out of hands-on work with Wildberries sales-funnel reports and advertising expenses. The original experience covers basic WB reporting, not a complete financial reconciliation system. Development capacity is currently limited; the project is being built incrementally. This repository contains an independently developed public reporting core, not a private production deployment or customer database. All example accounts, SKU identifiers, campaigns and transaction values are fictional.
 
-## What works in v0.2.0 (development)
+## Long-term goal: one reconciled source of truth
+
+Many sellers must compare sales funnels, advertising reports, official financial statements, returns, fees, logistics, payouts and their own cost data manually. The aim is to connect these reports while preserving their different accounting meanings, rather than blindly adding totals from different sources.
+
+The planned architecture separates three views: operational analytics (orders, cancellations and advertising), recognized financial results (official settlement transactions, fees, cost of goods and external expenses), and cash movements (payouts and balances). These views must reconcile through documented rules and retain source references, periods and discrepancies.
+
+The seller should be able to enter SKU-level cost of goods with effective dates, record external expenses and configure relevant tax assumptions. The system should then calculate transparent P&L and unit economics from reconciled financial events, clearly distinguishing provisional, incomplete and verified results. Official financial statements should be the reference for recognized marketplace charges and settlements; operational orders are not recognized revenue. Duplicate advertising charges, late returns, adjustments, period boundaries and unallocated expenses must be handled explicitly.
+
+Proposed modules: official report import and reconciliation; sales and advertising; cost of goods; P&L and unit economics; payouts; inventory and purchasing; dashboard; scheduled reporting and optional Telegram delivery; evidence-based AI assistance. None of these proposed extensions should be treated as complete simply because they are described here. See the [financial reconciliation design](docs/financial-reconciliation.md).
+
+## Current status versus planned functionality
+
+| Capability | Status |
+| --- | --- |
+| Normalized CSV orders/advertising calculations and validation | Implemented; synthetic tests |
+| Wildberries sales funnel and ad expense collection | Experimental public API collectors; live public integration not verified |
+| Ozon and Yandex Market collection | Experimental request scaffolding only; end-to-end integrations not implemented |
+| Official financial report import and reconciliation | Planned |
+| Effective-dated product costs, P&L and unit economics | Planned |
+| Payout reconciliation, inventory, dashboard, scheduled delivery | Planned |
+| Other marketplaces and AI-assisted explanations | Planned |
+
+The maintainer intends to use AI-assisted development, including Codex if available, for adapter implementation, financial regression tests, security review, documentation and release maintenance. Development tools can accelerate the work, but accounting definitions and results require human review. No funding, program acceptance, community adoption or completed feature is claimed here.
+
+## What is implemented in v0.2.0
 
 - Import two normalized CSV files: daily SKU-level orders and campaign-level advertising expenses.
 - Reconcile by date, marketplace, seller account, currency and SKU.
@@ -63,6 +89,8 @@ Read [the adapter setup guide](docs/adapters.md) or [русскую инстру
 
 ## Tests
 
+Passing synthetic tests verifies selected code behavior, not live API compatibility or accounting accuracy. Financial reconciliation needs its own independently checked reference fixtures and acceptance tests.
+
 ```bash
 python -m unittest discover -s tests -v
 ```
@@ -75,7 +103,7 @@ The reporting core operates locally and makes no network requests. Experimental 
 
 ## Help shape the project
 
-Marketplace sellers and developers are welcome to suggest report mappings, contribute synthetic format fixtures, report calculation edge cases, and review metric definitions. Please consult the [roadmap](ROADMAP.md) and [contribution guide](CONTRIBUTING.md).
+Marketplace sellers, analysts and developers are invited to review the proposed reconciliation rules, suggest official report mappings, contribute synthetic format fixtures and report calculation edge cases. The first priority is trustworthy Wildberries accounting; other marketplaces follow only after their source contracts and calculations have been validated. Community feedback will determine priorities. Please consult the [roadmap](ROADMAP.md) and [contribution guide](CONTRIBUTING.md).
 
 ## License and independence
 

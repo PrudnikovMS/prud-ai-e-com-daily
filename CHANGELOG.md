@@ -1,5 +1,11 @@
 # Changelog
 
+## Unreleased — development planning
+
+- Clarified early prototype status and the distinction between experimental data collection and verified financial reporting.
+- Documented the proposed official-report reconciliation, historical product costs, P&L, settlement controls and six-month development direction.
+- Documentation changes only; no new financial calculations or live marketplace integrations are claimed.
+
 ## 0.2.0 — development milestone (2026-11-25)
 
 - Added experimental read-only collection commands for Wildberries, Ozon and Yandex Market.
